@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+	production: false,
+  apiUrl: 'https://mmdb.danailov.eu/admin/',
+  apiKey: '79aaf6739e6299328427b7c8f61ba9',
+	moviesCollection: 'movies',
 };
 
 /*

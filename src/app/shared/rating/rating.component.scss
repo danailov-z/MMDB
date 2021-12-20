@@ -1,0 +1,27 @@
+.cursor-pointer {
+	cursor: pointer;
+}
+.star-ranking-animation {
+	&:hover {
+		.bi {
+			&::before {
+				content: '\f586';
+			}
+		}
+	}
+	.bi:hover ~ .bi {
+		&::before {
+			content: '\f588';
+		}
+	}
+}
+.header-star {
+	font-size: 70px;
+}
+
+$star-size: 60px;
+@for $i from 1 through 10 {
+	.size-#{$i} {
+		font-size: calc(70px + #{$i}0%);
+	}
+}

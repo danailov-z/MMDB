@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center position-relative">
+    <i class="bi bi-star-fill header-star size-{{selectedRating}} position-absolute top-50 start-50 translate-middle"></i>
+    <h4 class="mb-0 mt-1 text-primary position-relative header-ranking position-absolute top-50 start-50 translate-middle">{{selectedRating !== null ? selectedRating + 1 : '?'}}</h4>
+    
+</div>
+<div class="modal-body d-flex justify-content-center mt-5">
+    <div class="text-center star-ranking-animation">
+        <i *ngFor="let star of rankingStars; index as id" class="{{star.class}} bi h4 cursor-pointer" (click)="selectRank(id)"></i>
+    </div>
+</div>
+<div class="text-center">
+    <button type="button" [ngClass]="{'disabled': selectedRating === null}" class="btn btn-primary btn-sm px-5 m-4" (click)="vote()">Vote</button>
+</div>
