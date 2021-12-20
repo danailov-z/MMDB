@@ -11,36 +11,17 @@ export class RatingComponent implements OnInit {
 	constructor(public bsModalRef: BsModalRef) {}
 
 	public event: EventEmitter<any> = new EventEmitter();
-	rankingStars: Stars[] = [];
+
 	selectedRating: number | null = null;
 
-	initStars() {
-		for (let star = 0; star < 10; star++) {
-			this.rankingStars.push({ id: star, class: 'bi-star' });
-		}
-	}
-
-	ngOnInit(): void {
-		this.initStars();
-		console.log(this.rankingStars);
-	}
-
-	selectRank(value: number): void {
-		this.rankingStars.filter((star) => {
-			if (star.id <= value) {
-				star.class = 'bi-star-fill';
-			} else {
-				star.class = 'bi-star';
-			}
-
-			return star;
-		});
-
-		this.selectedRating = value;
-	}
+	ngOnInit(): void {}
 
 	triggerEvent(item: number) {
 		this.event.emit(item + 1);
+	}
+
+	getRank(value: number) {
+		this.selectedRating = value;
 	}
 
 	vote() {

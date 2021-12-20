@@ -1,0 +1,36 @@
+.form-select.ng-select {
+	padding: 0.75rem 2.5rem 0.75rem 1.5rem;
+}
+.ng-dropdown-panel {
+	left: 0;
+	top: 50px;
+	@include glass(1, $white);
+	border-radius: $border-radius;
+	.ng-option {
+		padding: 0.5rem 1.5rem;
+		color: $primary;
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.4);
+		}
+	}
+}
+.ng-value {
+	padding: 0 0.25em;
+	background-color: $primary;
+	border-radius: $border-radius;
+	margin-right: 0.25rem;
+	.ng-value-icon {
+		margin-right: 0.25rem;
+	}
+}
+.bs-datepicker {
+	@include glass(1, $light);
+	border-radius: $border-radius;
+}
+.bs-datepicker-head,
+.selected {
+	background-color: $primary !important;
+}
+.bs-datepicker-body table td.week span {
+	color: $primary !important;
+}

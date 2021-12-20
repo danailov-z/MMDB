@@ -1,0 +1,17 @@
+.star-ranking-animation {
+	&:hover {
+		.bi {
+			&::before {
+				content: '\f586';
+			}
+		}
+	}
+	.bi:hover ~ .bi {
+		&::before {
+			content: '\f588';
+		}
+	}
+}
+.cursor-pointer {
+	cursor: pointer;
+}

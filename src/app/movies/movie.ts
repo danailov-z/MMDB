@@ -1,5 +1,5 @@
 export interface Movie {
-    _id: string;
+    _id?: string;
     box_office: string;
     category: string[];
     name: string;

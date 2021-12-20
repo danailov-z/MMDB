@@ -2,8 +2,10 @@
 @import 'variables';
 @import 'bootstrap';
 @import '~bootstrap-icons/font/bootstrap-icons';
+@import '~ngx-bootstrap/datepicker/bs-datepicker.scss';
 
 //include theme
 @import 'theme';
 
 //custom styles
+@import 'forms';

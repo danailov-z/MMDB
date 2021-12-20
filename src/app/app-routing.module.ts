@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListMoviesComponent } from './movies/list-movies/list-movies.component';
+import { MoviesModule } from './movies/movies.module';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-	{ path: '', component: ListMoviesComponent, pathMatch: 'full' },
+	{ path: 'movies', loadChildren: () => import('./movies/movies.module').then((m) => m.MoviesModule) },
+	{ path: 'add-movie', loadChildren: () => import('./movies/movies.module').then((m) => m.MoviesModule) },
+	{ path: '', component: WelcomeComponent, pathMatch: 'full' },
 	{ path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes), MoviesModule],
+	exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, Subscription, takeUntil } from 'rxjs';
 import { CockpitService } from 'src/app/core/cockpit.service';
-import { Movie } from 'src/app/core/movie';
+import { Movie } from 'src/app/movies/movie';
 
 @Component({
 	selector: 'app-list-movies',

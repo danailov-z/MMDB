@@ -13,7 +13,7 @@
             <dt class="col-sm-5">Box office:</dt>
             <dd class="col-sm-7">{{+movie.box_office | currency: 'USD':'symbol-narrow'}}</dd>
             <dt class="col-sm-5">User's rating:</dt>
-            <dd class="col-sm-7"><strong>{{movie.rank | number: '1.0-1'}}</strong>/10 <small>({{movie.votes}} votes)</small></dd>
+            <dd class="col-sm-7"><strong>{{movie.rank ? (movie.rank | number: '1.0-1') : '-'}}</strong>/10 <small>({{movie.votes}} votes)</small></dd>
         </dl>
 	</div>
     <div class="card-footer text-center">

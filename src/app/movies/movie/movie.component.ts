@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Movie, Ranking } from 'src/app/core/movie';
+import { Movie, Ranking } from 'src/app/movies/movie';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import { RatingComponent } from 'src/app/shared/rating/rating.component';
 import { CockpitService } from 'src/app/core/cockpit.service';
 import { Subscription } from 'rxjs';
-import { RatingService } from 'src/app/shared/rating.service';
+import { RatingService } from 'src/app/shared/rating/rating.service';
 
 @Component({
 	selector: 'app-movie',
@@ -51,7 +51,7 @@ export class MovieComponent implements OnInit {
 	resetRank(movie: Movie) {
 		const newRank = this.ratingService.updateRating(+movie.votes, +movie.rank, +movie.your_rank, false);
 		const data: Ranking = {
-			_id: movie._id,
+			_id: movie._id!,
 			rank: newRank,
 			votes: +movie.votes - 1,
 			your_rank: null,
@@ -68,7 +68,7 @@ export class MovieComponent implements OnInit {
 	updateRank(movie: Movie, userRank: number) {
 		const newRank = this.ratingService.updateRating(+movie.votes, +movie.rank, +userRank, true);
 		const data: Ranking = {
-			_id: movie._id,
+			_id: movie._id!,
 			rank: newRank,
 			votes: +movie.votes + 1,
 			your_rank: userRank,

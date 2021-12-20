@@ -1,37 +1,25 @@
+import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './core/auth.interceptor';
-import { ListMoviesComponent } from './movies/list-movies/list-movies.component';
-import { MovieComponent } from './movies/movie/movie.component';
-import { RatingComponent } from './shared/rating/rating.component';
+import { NavigationComponent } from './core/navigation/navigation.component';
+import { MoviesModule } from './movies/movies.module';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ListMoviesComponent,
-    MovieComponent,
-    RatingComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ModalModule.forRoot(),
-    TooltipModule.forRoot()
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, NavigationComponent, WelcomeComponent],
+	imports: [BrowserModule, AppRoutingModule, HttpClientModule, MoviesModule, CommonModule],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptor,
+			multi: true,
+		},
+	],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

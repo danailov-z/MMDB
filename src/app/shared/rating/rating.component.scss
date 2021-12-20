@@ -1,20 +1,3 @@
-.cursor-pointer {
-	cursor: pointer;
-}
-.star-ranking-animation {
-	&:hover {
-		.bi {
-			&::before {
-				content: '\f586';
-			}
-		}
-	}
-	.bi:hover ~ .bi {
-		&::before {
-			content: '\f588';
-		}
-	}
-}
 .header-star {
 	font-size: 70px;
 }

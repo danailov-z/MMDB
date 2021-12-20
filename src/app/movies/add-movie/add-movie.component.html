@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-md-10 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Add movie</h1>
+                    <form class="mt-5" [formGroup]="addMovieForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-4">
+                            <label for="movieTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="movieTitle" formControlName="title" >
+                        </div>
+                        <div class="mb-4">
+                            <label for="movieCategory" class="form-label">Category</label>
+                            <ng-select 
+                                [items]="movieCategories$ | async" 
+                                [multiple]="true"
+                                formControlName="selectedCategories" 
+                                class="form-select"
+                                >
+                            </ng-select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="movieReleaseDate" class="form-label">Release date</label>
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                formControlName="date"  
+                                id="movieReleaseDate" 
+                                autocomplete="off"
+                                bsDatepicker
+                                [bsConfig]="{ isAnimated: true, startView: 'year', dateInputFormat: 'YYYY' }"
+                                (onShown)="onOpenCalendar($event)">
+                        </div>
+                        <div class="mb-4">
+                            <label for="movieBoxOffice" class="form-label">Box office</label>
+                            <input type="text" class="form-control" id="movieBoxOffice" formControlName="boxoffice" >
+                        </div>
+                        <div class="mb-4 d-flex align-items-start flex-column">
+                            <label for="movieBoxOffice" class="form-label">Rating</label>
+                            <div class="d-flex">
+                                <app-star #rank (rank)="getRank($event)"></app-star>
+                                <button type="button" class="btn btn-link btn-sm" (click)="rank.initStars()">Reset</button>
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" [disabled]="!addMovieForm.valid" class="btn btn-primary btn-block">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+<div class="text-center star-ranking-animation">
+    <i *ngFor="let star of rankingStars; index as id" class="{{star.class}} bi h4 cursor-pointer" (click)="selectRank(id)"></i>
+</div>
