@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Movie, Ranking } from 'src/app/movies/movie';
-import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { RatingComponent } from 'src/app/shared/rating/rating.component';
 import { CockpitService } from 'src/app/core/cockpit.service';
 import { Subscription } from 'rxjs';

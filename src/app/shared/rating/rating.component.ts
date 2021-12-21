@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { Stars } from './stars';
 
 @Component({
 	selector: 'app-rating',

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject, Subscription, takeUntil } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { CockpitService } from 'src/app/core/cockpit.service';
 import { Movie } from 'src/app/movies/movie';
 
