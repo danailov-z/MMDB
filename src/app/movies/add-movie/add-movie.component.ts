@@ -45,7 +45,7 @@ export class AddMovieComponent implements OnInit, OnDestroy {
 	saveMovie(movie: Movie) {
 		this.subscription = this.cockpitService.saveMovie(movie).subscribe({
 			next: () => {
-				this.router.navigate(['']);
+				this.router.navigate(['/movies']);
 			},
 			error: (err) => (this.errorMessage = err),
 		});

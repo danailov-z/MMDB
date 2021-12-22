@@ -11,6 +11,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { RatingComponent } from '../shared/rating/rating.component';
 import { StarComponent } from '../shared/star/star.component';
 import { MovieComponent } from './movie/movie.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -27,12 +28,11 @@ import { MovieComponent } from './movie/movie.component';
 			{ path: 'movies', component: ListMoviesComponent },
 			{ path: 'add-movie', component: AddMovieComponent },
 		]),
-
+		SharedModule,
 		ReactiveFormsModule,
 		ModalModule.forChild(),
 		TooltipModule.forRoot(),
 		BsDatepickerModule.forRoot(),
-		BrowserAnimationsModule,
 		NgSelectModule,
 		FormsModule,
 	],
