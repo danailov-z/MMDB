@@ -1,6 +1,6 @@
 # MMDB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
+Simple project for listing movies from DB, adding new move and rate movie.
 
 ## Development server
 
@@ -12,4 +12,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Backend server
 
-You can manually edit backend from `https://mmdb.danailov.eu/admin/collections/entries/movies`. User: `admin`, pass: `admin`
+You can manually edit backend from https://mmdb.danailov.eu/admin/collections/entries/movies. User: `admin`, pass: `admin`
